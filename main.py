@@ -7,8 +7,10 @@ import warnings
 from argparse import ArgumentParser
 import pandas as pd
 from preprocess import AtariEnv
+from ale_py import ALEInterface, LoggerMode
 
 warnings.simplefilter("ignore")
+ALEInterface.setLoggerMode(LoggerMode.Error)
 
 environments = [
     "AsteroidsNoFrameskip-v4",
