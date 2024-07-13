@@ -1,6 +1,6 @@
 import gymnasium as gym
 import utils
-from agent import DDQNAgent
+from ddqn import DDQNAgent
 import numpy as np
 import os
 import warnings
@@ -29,17 +29,17 @@ environments = [
 ]
 
 
-def make_env(name):
-    return AtariEnv(
-        name,
-        shape=(84, 84),
-        repeat=4,
-        clip_rewards=True,
-    ).make()
-
-
 def run_ddqn(args):
-    envs = gym.vector.AsyncVectorEnv([make_env(args.env) for _ in range(args.n_envs)])
+
+    def make_env():
+        return AtariEnv(
+            args.env,
+            shape=(84, 84),
+            repeat=4,
+            clip_rewards=True,
+        ).make()
+
+    envs = gym.vector.AsyncVectorEnv([make_env for _ in range(args.n_envs)])
     save_prefix = args.env.split("/")[-1]
 
     print(f"\nEnvironment: {save_prefix}")
