@@ -87,7 +87,7 @@ def run_ddqn(args):
                 history.append(score[j])
                 score[j] = 0
 
-        agent.learn()
+            agent.learn()
         states = next_states
 
         if len(history) > 0:
