@@ -35,9 +35,9 @@ def run_ddqn(args):
         args.env,
         envs.single_observation_space.shape,
         envs.single_action_space.n,
-        mem_size=100000,
+        mem_size=200000,
         batch_size=32,
-        eps_dec=1e-5,
+        eps_dec=1e-6,
         replace_target_count=1000,
     )
 
@@ -94,6 +94,9 @@ def run_ddqn(args):
         eps_str = f"  Epsilon = {agent.epsilon:.4f}"
         print(ep_str + g_str + avg_str + eps_str, end="\r")
 
+    agent.q1.save(agent.q1.state_dict(), "weights/q1_final.pt")
+    agent.q2.save(agent.q2.state_dict(), "weights/q2_final.pt")
+
     save_results(args.env, history, metrics, agent)
 
 
@@ -117,7 +120,7 @@ def save_best_version(env_name, agent, seeds=10):
         repeat=4,
         clip_rewards=True,
         no_ops=0,
-        fire_first=False,
+        fire_first=True,
     ).make()
 
     save_prefix = env_name.split("/")[-1]
@@ -153,7 +156,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--n_steps",
-        default=10000,
+        default=100000,
         type=int,
         help="Number of learning steps to run during training",
     )
