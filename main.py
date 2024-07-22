@@ -96,7 +96,7 @@ def run_ddqn(args):
         print(ep_str + g_str + avg_str + eps_str, end="\r")
 
     torch.save(agent.q1.state_dict(), "weights/q1_final.pt")
-    torch.q2.save(agent.q2.state_dict(), "weights/q2_final.pt")
+    torch.save(agent.q2.state_dict(), "weights/q2_final.pt")
 
     save_results(args.env, history, metrics, agent)
 
@@ -121,7 +121,7 @@ def save_best_version(env_name, agent, seeds=10):
         repeat=4,
         clip_rewards=True,
         no_ops=0,
-        fire_first=True,
+        fire_first=False,
     ).make()
 
     save_prefix = env_name.split("/")[-1]
