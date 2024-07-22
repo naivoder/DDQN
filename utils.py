@@ -38,14 +38,20 @@ def save_animation(frames, filename):
             writer.append_data(frame)
 
 
-def plot_running_avg(scores, env):
-    avg = np.zeros_like(scores)
+def plot_running_avg(scores, env, metrics):
+    avg_scores = np.zeros_like(scores)
+    avg_q_values = [m["average_q_value"] for m in metrics]
+
     for i in range(len(scores)):
-        avg[i] = np.mean(scores[max(0, i - 100) : i + 1])
-    plt.plot(avg)
-    plt.title("Running Average per 100 Games")
+        avg_scores[i] = np.mean(scores[max(0, i - 100) : i + 1])
+
+    plt.figure(figsize=(10, 5))
+    plt.plot(avg_scores, label="Average Score")
+    plt.plot(avg_q_values, label="Average Q Value")
+    plt.title("Running Average per 100 Games and Average Q Value")
     plt.xlabel("Episode")
-    plt.ylabel("Average Score")
+    plt.ylabel("Value")
+    plt.legend()
     plt.grid(True)
-    plt.savefig(f"metrics/{env}_running_avg.png")
+    plt.savefig(f"metrics/{env}_running_avg_q.png")
     plt.close()

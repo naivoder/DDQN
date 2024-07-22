@@ -15,6 +15,28 @@ warnings.simplefilter("ignore")
 ALEInterface.setLoggerMode(LoggerMode.Error)
 
 
+def collect_fixed_states(env_name, n_envs=50, max_steps=10):
+    def make_env():
+        return AtariEnv(
+            env_name,
+            shape=(84, 84),
+            repeat=4,
+            clip_rewards=True,
+        ).make()
+
+    envs = gym.vector.AsyncVectorEnv([make_env for _ in range(n_envs)])
+    states, _ = envs.reset()
+
+    steps = np.random.randint(1, max_steps)
+    for _ in range(steps):
+        actions = [envs.single_action_space.sample() for _ in range(n_envs)]
+        states, _, term, trunc, _ = envs.step(actions)
+        if term.any() or trunc.any():
+            break
+
+    return np.array(states)
+
+
 def run_ddqn(args):
 
     def make_env():
@@ -51,6 +73,8 @@ def run_ddqn(args):
     score = np.zeros(args.n_envs)
     history, metrics = [], []
 
+    fixed_states = collect_fixed_states(args.env, n_envs=50)
+
     states, _ = envs.reset()
     for i in range(args.n_steps):
         actions = [agent.choose_action(state) for state in states]
@@ -81,11 +105,14 @@ def run_ddqn(args):
             best_score = avg_score
             agent.save_checkpoint()
 
+        avg_q_value = np.mean([agent.q1(state).max().item() for state in fixed_states])
+
         metrics.append(
             {
                 "episode": i + 1,
                 "average_score": avg_score,
                 "best_score": best_score,
+                "average_q_value": avg_q_value,
             }
         )
 
@@ -103,7 +130,7 @@ def run_ddqn(args):
 
 def save_results(env_name, history, metrics, agent):
     save_prefix = env_name.split("/")[-1]
-    utils.plot_running_avg(history, save_prefix)
+    utils.plot_running_avg(history, save_prefix, metrics)
     df = pd.DataFrame(metrics)
     df.to_csv(f"metrics/{save_prefix}_metrics.csv", index=False)
     save_best_version(env_name, agent)
