@@ -3,6 +3,7 @@ import utils
 from ddqn import DDQNAgent
 import numpy as np
 import os
+import torch
 import warnings
 from argparse import ArgumentParser
 import pandas as pd
@@ -94,8 +95,8 @@ def run_ddqn(args):
         eps_str = f"  Epsilon = {agent.epsilon:.4f}"
         print(ep_str + g_str + avg_str + eps_str, end="\r")
 
-    agent.q1.save(agent.q1.state_dict(), "weights/q1_final.pt")
-    agent.q2.save(agent.q2.state_dict(), "weights/q2_final.pt")
+    torch.save(agent.q1.state_dict(), "weights/q1_final.pt")
+    torch.q2.save(agent.q2.state_dict(), "weights/q2_final.pt")
 
     save_results(args.env, history, metrics, agent)
 

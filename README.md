@@ -115,29 +115,29 @@ python main.py --env 'LunarLander-v2'
 <table>
     <tr>
         <td>
-            <p><b>MsPacmanNoFrameskip-v4</b></p>
+            <p><b>MsPacman</b></p>
             <img src="environments/MsPacmanNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>SpaceInvaders-v5</b></p>
-            <img src="environments/SpaceInvaders-v5.gif" width="250" height="250"/>
-        </td>
         <td>
+            <p><b>AirRaid</b></p>
+            <img src="environments/AirRaidNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
             <p><b>Tetris-v5</b></p>
             <img src="environments/Tetris-v5.gif" width="250" height="250"/>
         </td> -->
     </tr>
-    <tr>
+    <!--<tr>
         <td>
             <img src="metrics/MsPacmanNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>
-        <!--<td>
+        <td>
             <img src="metrics/SpaceInvaders-v5_running_avg.png" width="250" height="250"/>
         </td>
         <td>
             <img src="metrics/Tetris-v5_running_avg.png" width="250" height="250"/>
-        </td> -->
-    </tr>
+        </td> 
+    </tr>-->
 </table>
 
 ---
