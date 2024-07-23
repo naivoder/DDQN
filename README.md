@@ -58,11 +58,11 @@ python main.py --env 'LunarLander-v2'
             <p><b>Amidar</b></p>
             <img src="environments/AmidarNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<<td>
-            <p><b>Asteroids-v5</b></p>
-            <img src="environments/Asteroids-v5.gif" width="250" height="250"/>
-        </td>
         <td>
+            <p><b>Assault</b></p>
+            <img src="environments/AssaultNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
             <p><b>Breakout-v5</b></p>
             <img src="environments/Breakout-v5.gif" width="250" height="250"/>
         </td>-->
@@ -71,15 +71,16 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/AmidarNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>
-        <!--<<td>
-            <img src="metrics/Asteroids-v5_running_avg.png" width="250" height="250"/>
-        </td>
         <td>
+            <img src="metrics/AssaultNoFrameskip-v4_running_avg.png" width="250" height="250"/>
+        </td>
+        <!--<td>
             <img src="metrics/Breakout-v5_running_avg.png" width="250" height="250"/>
         </td>-->
     </tr>
 </table>
----
+
+
 
 ## Acknowledgements
 
