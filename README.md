@@ -24,94 +24,7 @@ python main.py --env 'LunarLander-v2'
 
 ---
 
-<!--<table>
-    <tr>
-        <td>
-            <p><b>LunarLander-v2</b></p>
-            <img src="environments/LunarLander-v2.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>Asteroids-v5</b></p>
-            <img src="environments/Asteroids-v5.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>Breakout-v5</b></p>
-            <img src="environments/Breakout-v5.gif" width="250" height="250"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="metrics/LunarLander-v2_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/Asteroids-v5_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/Breakout-v5_running_avg.png" width="250" height="250"/>
-        </td>
-    </tr>
-</table>
-<table>
-    <tr>
-        <td>
-            <p><b>BeamRider-v5</b></p>
-            <img src="environments/BeamRider-v5.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>Centipede-v5</b></p>
-            <img src="environments/Centipede-v5.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>DonkeyKong-v5</b></p>
-            <img src="environments/DonkeyKong-v5.gif" width="250" height="250"/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="metrics/BeamRider-v5_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/Centipede-v5_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/DonkeyKong-v5_running_avg.png" width="250" height="250"/>
-        </td>
-    </tr>
-</table>
-<table>
-    <tr>
-        <td>
-            <p><b>DoubleDunk-v5</b></p>
-            <img src="environments/DoubleDunk-v5.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>Frogger-v5</b></p>
-            <img src="environments/Frogger-v5.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>KungFuMaster-v5</b></p>
-            <img src="environments/KungFuMaster-v5.gif" width="250" height="250"/>
-        </td>
-        <td>
-            <p><b>MarioBros-v5</b></p>
-            <img src="environments/MarioBros-v5.gif" width="250" height="250"/>
-        </td>
-    </tr>
-    <tr>
-    <td>
-            <img src="metrics/DoubleDunk-v5_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/Frogger-v5_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/KungFuMaster-v5_running_avg.png" width="250" height="250"/>
-        </td>
-        <td>
-            <img src="metrics/MarioBros-v5_running_avg.png" width="250" height="250"/>
-        </td>
-    </tr>
-</table> -->
+
 <table>
     <tr>
         <td>
@@ -139,7 +52,33 @@ python main.py --env 'LunarLander-v2'
         </td> 
     </tr>
 </table>
-
+<table>
+    <tr>
+        <td>
+            <p><b>Amidar</b></p>
+            <img src="environments/AmidarNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<<td>
+            <p><b>Asteroids-v5</b></p>
+            <img src="environments/Asteroids-v5.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>Breakout-v5</b></p>
+            <img src="environments/Breakout-v5.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/AmidarNoFrameskip-v4_running_avg.png" width="250" height="250"/>
+        </td>
+        <!--<<td>
+            <img src="metrics/Asteroids-v5_running_avg.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/Breakout-v5_running_avg.png" width="250" height="250"/>
+        </td>-->
+    </tr>
+</table>
 ---
 
 ## Acknowledgements
