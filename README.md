@@ -85,11 +85,11 @@ python main.py --env 'LunarLander-v2'
             <p><b>Asteroids</b></p>
             <img src="environments/AsteroidsNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>Assault</b></p>
-            <img src="environments/AssaultNoFrameskip-v4.gif" width="250" height="250"/>
-        </td>
         <td>
+            <p><b>Atlantis</b></p>
+            <img src="environments/AtlantisNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
             <p><b>Asterix</b></p>
             <img src="environments/AsterixNoFrameskip-v4.gif" width="250" height="250"/>
         </td>-->
@@ -98,10 +98,10 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/AsteroidsNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>
-        <!--<td>
-            <img src="metrics/AssaultNoFrameskip-v4_running_avg.png" width="250" height="250"/>
-        </td>
         <td>
+            <img src="metrics/AtlantisNoFrameskip-v4_running_avg.png" width="250" height="250"/>
+        </td>
+        <!--<td>
             <img src="metrics/AsterixNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>-->
     </tr>
