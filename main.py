@@ -34,7 +34,7 @@ def collect_fixed_states(env_name, n_envs=50, max_steps=10):
         if term.any() or trunc.any():
             break
 
-    return np.array(states)
+    return torch.FloatTensor(states)
 
 
 def run_ddqn(args):
@@ -73,7 +73,7 @@ def run_ddqn(args):
     score = np.zeros(args.n_envs)
     history, metrics = [], []
 
-    fixed_states = collect_fixed_states(args.env, n_envs=50)
+    # fixed_states = collect_fixed_states(args.env, n_envs=50)
 
     states, _ = envs.reset()
     for i in range(args.n_steps):
@@ -105,14 +105,14 @@ def run_ddqn(args):
             best_score = avg_score
             agent.save_checkpoint()
 
-        avg_q_value = np.mean([agent.q1(state).max().item() for state in fixed_states])
+        # avg_q_value = np.mean([agent.q1(state.to(agent.q1.device)).max().item() for state in fixed_states])
 
         metrics.append(
             {
                 "episode": i + 1,
                 "average_score": avg_score,
                 "best_score": best_score,
-                "average_q_value": avg_q_value,
+                # "average_q_value": avg_q_value,
             }
         )
 
@@ -122,8 +122,8 @@ def run_ddqn(args):
         eps_str = f"  Epsilon = {agent.epsilon:.4f}"
         print(ep_str + g_str + avg_str + eps_str, end="\r")
 
-    torch.save(agent.q1.state_dict(), "weights/q1_final.pt")
-    torch.save(agent.q2.state_dict(), "weights/q2_final.pt")
+    torch.save(agent.q1.state_dict(), f"weights/{save_prefix}_q1_final.pt")
+    torch.save(agent.q2.state_dict(), f"weights/{save_prefix}_q2_final.pt")
 
     save_results(args.env, history, metrics, agent)
 
