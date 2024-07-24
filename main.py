@@ -106,7 +106,7 @@ def run_ddqn(args):
             agent.save_checkpoint()
 
         with torch.no_grad():
-            avg_q_value = agent.q1(fixed_states).cpu().numpy()
+            avg_q_value = agent.q1(fixed_states).mean().cpu().numpy()
         avg_q_value *= 1e-9 # scaling down because it gets huge
 
         metrics.append(
