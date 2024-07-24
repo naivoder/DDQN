@@ -73,7 +73,7 @@ def run_ddqn(args):
     score = np.zeros(args.n_envs)
     history, metrics = [], []
 
-    # fixed_states = collect_fixed_states(args.env, n_envs=50)
+    fixed_states = collect_fixed_states(args.env, n_envs=50).to(agent.q1.device)
 
     states, _ = envs.reset()
     for i in range(args.n_steps):
@@ -105,14 +105,16 @@ def run_ddqn(args):
             best_score = avg_score
             agent.save_checkpoint()
 
-        # avg_q_value = np.mean([agent.q1(state.to(agent.q1.device)).max().item() for state in fixed_states])
+        with torch.no_grad():
+            avg_q_value = agent.q1(fixed_states).cpu().numpy()
+        avg_q_value *= 1e-9 # scaling down because it gets huge
 
         metrics.append(
             {
                 "episode": i + 1,
                 "average_score": avg_score,
                 "best_score": best_score,
-                # "average_q_value": avg_q_value,
+                "average_q_value": avg_q_value,
             }
         )
 
