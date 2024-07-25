@@ -89,10 +89,10 @@ python main.py --env 'LunarLander-v2'
             <p><b>Atlantis</b></p>
             <img src="environments/AtlantisNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>Asterix</b></p>
-            <img src="environments/AsterixNoFrameskip-v4.gif" width="250" height="250"/>
-        </td>-->
+        <td>
+            <p><b>BankHeist</b></p>
+            <img src="environments/BankHeistNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
     </tr>
     <tr>
         <td>
@@ -101,12 +101,38 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/AtlantisNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>
+        <td>
+            <img src="metrics/BankHeistNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <p><b>BattleZone</b></p>
+            <img src="environments/BattleZoneNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
         <!--<td>
-            <img src="metrics/AsterixNoFrameskip-v4_running_avg.png" width="250" height="250"/>
+            <p><b>Atlantis</b></p>
+            <img src="environments/AtlantisNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>BankHeist</b></p>
+            <img src="environments/BankHeistNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/BattleZoneNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/AtlantisNoFrameskip-v4_running_avg.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/BankHeistNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>-->
     </tr>
 </table>
-
 
 ## Acknowledgements
 
