@@ -112,11 +112,11 @@ python main.py --env 'LunarLander-v2'
             <p><b>BattleZone</b></p>
             <img src="environments/BattleZoneNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>Atlantis</b></p>
-            <img src="environments/AtlantisNoFrameskip-v4.gif" width="250" height="250"/>
-        </td>
         <td>
+            <p><b>BeamRider</b></p>
+            <img src="environments/BeamRiderNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
             <p><b>BankHeist</b></p>
             <img src="environments/BankHeistNoFrameskip-v4.gif" width="250" height="250"/>
         </td>-->
@@ -125,10 +125,10 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/BattleZoneNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
         </td>
-        <!--<td>
-            <img src="metrics/AtlantisNoFrameskip-v4_running_avg.png" width="250" height="250"/>
-        </td>
         <td>
+            <img src="metrics/BeamRiderNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
             <img src="metrics/BankHeistNoFrameskip-v4_running_avg.png" width="250" height="250"/>
         </td>-->
     </tr>
