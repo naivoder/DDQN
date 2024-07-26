@@ -133,6 +133,33 @@ python main.py --env 'LunarLander-v2'
         </td>
     </tr>
 </table>
+<table>
+    <tr>
+        <td>
+            <p><b>Bowling</b></p>
+            <img src="environments/BowlingNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <p><b>BeamRider</b></p>
+            <img src="environments/BeamRiderNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>Berzerk</b></p>
+            <img src="environments/BerzerkNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/BowlingNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/BeamRiderNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/BerzerkNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>-->
+    </tr>
+</table>
 
 ## Acknowledgements
 
