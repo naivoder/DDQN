@@ -11,7 +11,7 @@ def generate_animation(env_name):
         env_name,
         shape=(84, 84),
         repeat=4,
-        clip_rewards=True,
+        clip_rewards=False,
         no_ops=0,
         fire_first=False,
     ).make()
@@ -25,7 +25,9 @@ def generate_animation(env_name):
         replace_target_count=1000,
     )
 
-    agent.load_checkpoint()
+    # agent.load_checkpoint()
+    agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
+    agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
 
     best_total_reward = float("-inf")
     best_frames = None
