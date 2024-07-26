@@ -110,7 +110,7 @@ python main.py --env 'LunarLander-v2'
     <tr>
         <td>
             <p><b>BattleZone</b></p>
-            <img src="environments/BattleZoneNoFrameskip-v4.gif" width="200" height="250"/>
+            <img src="environments/BattleZoneNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
         <td>
             <p><b>BeamRider</b></p>
