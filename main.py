@@ -31,8 +31,6 @@ def collect_fixed_states(env_name, n_envs=50, max_steps=10):
     for _ in range(steps):
         actions = [envs.single_action_space.sample() for _ in range(n_envs)]
         states, _, term, trunc, _ = envs.step(actions)
-        if term.any() or trunc.any():
-            break
 
     return torch.FloatTensor(states)
 
@@ -58,9 +56,9 @@ def run_ddqn(args):
         args.env,
         envs.single_observation_space.shape,
         envs.single_action_space.n,
-        mem_size=200000,
+        mem_size=30000,
         batch_size=32,
-        eps_dec=1e-6,
+        eps_dec=1e-7,
         replace_target_count=1000,
     )
 
@@ -107,7 +105,6 @@ def run_ddqn(args):
 
         with torch.no_grad():
             avg_q_value = agent.q1(fixed_states).mean().cpu().numpy()
-        avg_q_value *= 1e-9 # scaling down because it gets huge
 
         metrics.append(
             {
@@ -119,10 +116,11 @@ def run_ddqn(args):
         )
 
         ep_str = f"[Epoch {i + 1:05}/{args.n_steps}]"
-        g_str = f"  Completed Games = {len(history)}"
-        avg_str = f"  Average Score = {avg_score:.2f}"
-        eps_str = f"  Epsilon = {agent.epsilon:.4f}"
-        print(ep_str + g_str + avg_str + eps_str, end="\r")
+        g_str = f"  Games = {len(history)}"
+        avg_str = f"  Avg.Score = {avg_score:.2f}"
+        q_str = f"  Avg.Q = {avg_q_value:.2e}"
+        eps_str = f"  Eps. = {agent.epsilon:.2f}"
+        print(ep_str + g_str + avg_str + q_str + eps_str, end="\r")
 
     torch.save(agent.q1.state_dict(), f"weights/{save_prefix}_q1_final.pt")
     torch.save(agent.q2.state_dict(), f"weights/{save_prefix}_q2_final.pt")
@@ -138,7 +136,7 @@ def save_results(env_name, history, metrics, agent):
     save_best_version(env_name, agent)
 
 
-def save_best_version(env_name, agent, seeds=10):
+def save_best_version(env_name, agent, seeds=100):
     agent.load_checkpoint()
 
     best_total_reward = float("-inf")
@@ -148,15 +146,13 @@ def save_best_version(env_name, agent, seeds=10):
         env_name,
         shape=(84, 84),
         repeat=4,
-        clip_rewards=True,
-        no_ops=0,
-        fire_first=False,
+        clip_rewards=False,
     ).make()
 
     save_prefix = env_name.split("/")[-1]
 
-    for _ in range(seeds):
-        state, _ = env.reset()
+    for s in range(seeds):
+        state, _ = env.reset(seed=s)
 
         frames = []
         total_reward = 0
