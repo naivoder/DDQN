@@ -197,9 +197,9 @@ python main.py --env 'LunarLander-v2'
             <p><b>Defender</b></p>
             <img src="environments/DefenderNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>ChopperCommand</b></p>
-            <img src="environments/ChopperCommandNoFrameskip-v4.gif" width="250" height="250"/>
+        <td>
+            <p><b>DemonAttack</b></p>
+            <img src="environments/DemonAttackNoFrameskip-v4.gif" width="250" height="250"/>
         </td>-->
     </tr>
     <tr>
@@ -209,9 +209,9 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/DefenderNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
         </td>
-        <!--<td>
-            <img src="metrics/ChopperCommandNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
-        </td>-->
+        <td>
+            <img src="metrics/DemonAttackNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
     </tr>
 </table>
 
