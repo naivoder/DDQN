@@ -200,7 +200,7 @@ python main.py --env 'LunarLander-v2'
         <td>
             <p><b>DemonAttack</b></p>
             <img src="environments/DemonAttackNoFrameskip-v4.gif" width="250" height="250"/>
-        </td>-->
+        </td>
     </tr>
     <tr>
         <td>
@@ -212,6 +212,33 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/DemonAttackNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
         </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <p><b>DoubleDunk</b></p>
+            <img src="environments/DoubleDunkNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>ElevatorAction</b></p>
+            <img src="environments/ElevatorActionNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <p><b>DemonAttack</b></p>
+            <img src="environments/DemonAttackNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/DoubleDunkNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/ElevatorActionNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/DemonAttackNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>-->
     </tr>
 </table>
 
