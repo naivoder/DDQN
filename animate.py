@@ -11,7 +11,7 @@ def generate_animation(env_name):
         env_name,
         shape=(84, 84),
         repeat=4,
-        clip_rewards=False,
+        clip_rewards=True,
         no_ops=0,
         fire_first=False,
     ).make()
@@ -24,19 +24,20 @@ def generate_animation(env_name):
         eps_dec=1e-6,
         replace_target_count=1000,
     )
+    agent.epsilon = 0.1
 
-    # agent.load_checkpoint()
-    agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
-    agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
+    agent.load_checkpoint()
+    # agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
+    # agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
 
     best_total_reward = float("-inf")
     best_frames = None
 
-    for _ in range(100):
+    for seed in range(100):
         frames = []
         total_reward = 0
 
-        state, _ = env.reset()
+        state, _ = env.reset(seed=seed)
         term, trunc = False, False
         while not term and not trunc:
             frames.append(env.render())
