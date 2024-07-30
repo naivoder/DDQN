@@ -32,7 +32,7 @@ def generate_animation(env_name):
     best_total_reward = float("-inf")
     best_frames = None
 
-    for _ in range(10):
+    for _ in range(100):
         frames = []
         total_reward = 0
 
