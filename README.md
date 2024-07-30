@@ -241,6 +241,34 @@ python main.py --env 'LunarLander-v2'
         </td>
     </tr>
 </table>
+<table>
+    <tr>
+        <td>
+            <p><b>FishingDerby</b></p>
+            <img src="environments/FishingDerbyNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <p><b>ElevatorAction</b></p>
+            <img src="environments/ElevatorActionNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>Enduro</b></p>
+            <img src="environments/EnduroNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/FishingDerbyNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/ElevatorActionNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/EnduroNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>-->
+    </tr>
+</table>
+
 
 ## Acknowledgements
 
