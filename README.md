@@ -268,7 +268,33 @@ python main.py --env 'LunarLander-v2'
         </td>
     </tr>
 </table>
-
+<table>
+    <tr>
+        <td>
+            <p><b>Gopher</b></p>
+            <img src="environments/GopherNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>Gravitar</b></p>
+            <img src="environments/GravitarNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <p><b>Frostbite</b></p>
+            <img src="environments/FrostbiteNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/GopherNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/GravitarNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/FrostbiteNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>-->
+    </tr>
+</table>
 
 ## Acknowledgements
 

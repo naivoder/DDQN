@@ -26,9 +26,9 @@ def generate_animation(env_name):
     )
     agent.epsilon = 0.1
 
-    agent.load_checkpoint()
-    # agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
-    # agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
+    # agent.load_checkpoint()
+    agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
+    agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
 
     best_total_reward = float("-inf")
     best_frames = None
