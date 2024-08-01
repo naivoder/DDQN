@@ -295,6 +295,33 @@ python main.py --env 'LunarLander-v2'
         </td>
     </tr>
 </table>
+<table>
+    <tr>
+        <td>
+            <p><b>IceHockey</b></p>
+            <img src="environments/IceHockeyNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>JamesBond</b></p>
+            <img src="environments/JamesbondNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <p><b>Hero</b></p>
+            <img src="environments/HeroNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/IceHockeyNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/JamesbondNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/HeroNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+        </td>-->
+    </tr>
+</table>
 
 ## Acknowledgements
 
