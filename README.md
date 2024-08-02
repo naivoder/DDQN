@@ -326,7 +326,7 @@ python main.py --env 'LunarLander-v2'
     <tr>
         <td>
             <p><b>Kangaroo</b></p>
-            <img src="environments/HeroNoFrameskip-v4.gif" width="250" height="250"/>
+            <img src="environments/KangarooNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
         <td>
             <p><b>Krull</b></p>

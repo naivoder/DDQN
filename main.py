@@ -132,7 +132,7 @@ def save_results(env_name, history, metrics, agent):
     save_prefix = env_name.split("/")[-1]
     utils.plot_running_avg(history, save_prefix, metrics)
     df = pd.DataFrame(metrics)
-    df.to_csv(f"metrics/{save_prefix}_metrics.csv", index=False)
+    df.to_csv(f"csv/{save_prefix}_metrics.csv", index=False)
     save_best_version(env_name, agent)
 
 
@@ -201,7 +201,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    for fname in ["metrics", "environments", "weights"]:
+    for fname in ["metrics", "environments", "weights", "csv"]:
         if not os.path.exists(fname):
             os.makedirs(fname)
 
