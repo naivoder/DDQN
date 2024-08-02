@@ -58,7 +58,7 @@ def run_ddqn(args):
         envs.single_action_space.n,
         mem_size=30000,
         batch_size=32,
-        eps_dec=1e-7,
+        eps_dec=5e-7,
         replace_target_count=1000,
     )
 
