@@ -15,7 +15,7 @@ warnings.simplefilter("ignore")
 ALEInterface.setLoggerMode(LoggerMode.Error)
 
 
-def collect_fixed_states(env_name, n_envs=50, max_steps=10):
+def collect_fixed_states(env_name, n_envs=50, max_steps=20):
     def make_env():
         return AtariEnv(
             env_name,
@@ -30,7 +30,7 @@ def collect_fixed_states(env_name, n_envs=50, max_steps=10):
     steps = np.random.randint(1, max_steps)
     for _ in range(steps):
         actions = [envs.single_action_space.sample() for _ in range(n_envs)]
-        states, _, term, trunc, _ = envs.step(actions)
+        states, _, _, _, _ = envs.step(actions)
 
     return torch.FloatTensor(states)
 
@@ -104,7 +104,12 @@ def run_ddqn(args):
             agent.save_checkpoint()
 
         with torch.no_grad():
-            avg_q_value = agent.q1(fixed_states).mean().cpu().numpy()
+            avg_q_value = (
+                torch.minimum(agent.q1(fixed_states), agent.q2(fixed_states))
+                .mean()
+                .cpu()
+                .numpy()
+            )
 
         metrics.append(
             {
@@ -125,12 +130,12 @@ def run_ddqn(args):
     torch.save(agent.q1.state_dict(), f"weights/{save_prefix}_q1_final.pt")
     torch.save(agent.q2.state_dict(), f"weights/{save_prefix}_q2_final.pt")
 
-    save_results(args.env, history, metrics, agent)
+    save_results(args.env, metrics, agent)
 
 
-def save_results(env_name, history, metrics, agent):
+def save_results(env_name, metrics, agent):
     save_prefix = env_name.split("/")[-1]
-    utils.plot_running_avg(history, save_prefix, metrics)
+    utils.plot_running_avg(save_prefix, metrics)
     df = pd.DataFrame(metrics)
     df.to_csv(f"csv/{save_prefix}_metrics.csv", index=False)
     save_best_version(env_name, agent)

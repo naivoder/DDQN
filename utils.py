@@ -38,22 +38,25 @@ def save_animation(frames, filename):
             writer.append_data(frame)
 
 
-def plot_running_avg(scores, env, metrics):
+def plot_metrics(env, metrics):
+    episodes = [m["episode"] for m in metrics]
+    avg_scores = [m["average_score"] for m in metrics]
     avg_q_values = [m["average_q_value"] for m in metrics]
-    run_avg_scores = np.zeros_like(scores)
-    run_avg_qvals = np.zeros_like(avg_q_values)
 
-    for i in range(len(scores)):
-        run_avg_scores[i] = np.mean(scores[max(0, i - 100) : i + 1])
-        run_avg_qvals[i] = np.mean(avg_q_values[max(0, i - 100) : i + 1])
+    fig, ax1 = plt.subplots(figsize=(10, 5))
 
-    plt.figure(figsize=(10, 5))
-    plt.plot(run_avg_scores, label="Average Score")
-    plt.plot(run_avg_qvals, label="Average Q Value")
-    plt.title("Running Avg Scores vs Qvals per 100 Games")
-    plt.xlabel("Episode")
-    plt.ylabel("Value")
-    plt.legend()
+    ax1.set_xlabel("Episode")
+    ax1.set_ylabel("Average Score", color="tab:blue")
+    ax1.plot(episodes, avg_scores, label="Average Score", color="tab:blue")
+    ax1.tick_params(axis="y", labelcolor="tab:blue")
+
+    ax2 = ax1.twinx()
+    ax2.set_ylabel("Average Q Value", color="tab:red")
+    ax2.plot(episodes, avg_q_values, label="Average Q Value", color="tab:red")
+    ax2.tick_params(axis="y", labelcolor="tab:red")
+
+    fig.tight_layout()
+    plt.title(f"Average Score vs Average Q Value per Episode in {env}")
     plt.grid(True)
-    plt.savefig(f"metrics/{env}_running_avg_q.png")
+    plt.savefig(f"metrics/{env}_metrics.png")
     plt.close()
