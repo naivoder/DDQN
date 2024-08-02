@@ -339,13 +339,13 @@ python main.py --env 'LunarLander-v2'
     </tr>
     <tr>
         <td>
-            <img src="metrics/KangarooNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+            <img src="metrics/KangarooNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>
         <td>
-            <img src="metrics/KrullNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+            <img src="metrics/KrullNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>
         <td>
-            <img src="metrics/KungFuMasterNoFrameskip-v4_running_avg_q.png" width="250" height="250"/>
+            <img src="metrics/KungFuMasterNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>
     </tr>
 </table>
