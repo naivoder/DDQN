@@ -15,26 +15,6 @@ warnings.simplefilter("ignore")
 ALEInterface.setLoggerMode(LoggerMode.Error)
 
 
-def collect_fixed_states(env_name, n_envs=50, max_steps=20):
-    def make_env():
-        return AtariEnv(
-            env_name,
-            shape=(84, 84),
-            repeat=4,
-            clip_rewards=True,
-        ).make()
-
-    envs = gym.vector.AsyncVectorEnv([make_env for _ in range(n_envs)])
-    states, _ = envs.reset()
-
-    steps = np.random.randint(1, max_steps)
-    for _ in range(steps):
-        actions = [envs.single_action_space.sample() for _ in range(n_envs)]
-        states, _, _, _, _ = envs.step(actions)
-
-    return torch.FloatTensor(states)
-
-
 def run_ddqn(args):
 
     def make_env():
@@ -71,7 +51,7 @@ def run_ddqn(args):
     score = np.zeros(args.n_envs)
     history, metrics = [], []
 
-    fixed_states = collect_fixed_states(args.env, n_envs=50).to(agent.q1.device)
+    fixed_states = torch.tensor(utils.collect_fixed_states(envs)).to(agent.q1.device)
 
     states, _ = envs.reset()
     for i in range(args.n_steps):
