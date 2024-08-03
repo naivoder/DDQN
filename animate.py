@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 from utils import save_animation
 
 
-def generate_animation(env_name):
+def generate_animation(env_name, final=True):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     env = AtariEnv(
         env_name,
@@ -26,9 +26,11 @@ def generate_animation(env_name):
     )
     agent.epsilon = 0.1
 
-    agent.load_checkpoint()
-    # agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
-    # agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
+    if final:
+        agent.load_checkpoint()
+    else:
+        agent.q1.load_state_dict(torch.load(f"weights/{env_name}_q1_final.pt"))
+        agent.q2.load_state_dict(torch.load(f"weights/{env_name}_q2_final.pt"))
 
     best_total_reward = float("-inf")
     best_frames = None
@@ -58,5 +60,6 @@ if __name__ == "__main__":
     parser.add_argument(
         "-e", "--env", required=True, help="Environment name from Gymnasium"
     )
+    parser.add_argument('--final', type=bool, default=True)
     args = parser.parse_args()
-    generate_animation(args.env)
+    generate_animation(args.env, args.final)
