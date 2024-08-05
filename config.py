@@ -36,7 +36,7 @@ environments = [
     # "KungFuMasterNoFrameskip-v4",
     # "MontezumaRevengeNoFrameskip-v4",
     # "MsPacmanNoFrameskip-v4",
-    "NameThisGameNoFrameskip-v4",
+    # "NameThisGameNoFrameskip-v4",
     "PhoenixNoFrameskip-v4",
     "PitfallNoFrameskip-v4",
     "PongNoFrameskip-v4",
