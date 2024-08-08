@@ -413,10 +413,10 @@ python main.py --env 'LunarLander-v2'
             <p><b>PrivateEye</b></p>
             <img src="environments/PrivateEyeNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>Pong</b></p>
-            <img src="environments/PongNoFrameskip-v4.gif" width="250" height="250"/>
-        </td>-->
+        <td>
+            <p><b>Qbert</b></p>
+            <img src="environments/QbertNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
     </tr>
     <tr>
         <td>
@@ -425,8 +425,35 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/PrivateEyeNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>
+        <td>
+            <img src="metrics/QbertNoFrameskip-v4_metrics.png" width="250" height="250"/>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <p><b>Riverraid</b></p>
+            <img src="environments/RiverraidNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <td>
+            <p><b>RoadRunner</b></p>
+            <img src="environments/RoadRunnerNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
         <!--<td>
-            <img src="metrics/PongNoFrameskip-v4_metrics.png" width="250" height="250"/>
+            <p><b>Qbert</b></p>
+            <img src="environments/QbertNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>-->
+    </tr>
+    <tr>
+        <td>
+            <img src="metrics/RiverraidNoFrameskip-v4_metrics.png" width="250" height="250"/>
+        </td>
+        <td>
+            <img src="metrics/RoadRunnerNoFrameskip-v4_metrics.png" width="250" height="250"/>
+        </td>
+        <!--<td>
+            <img src="metrics/QbertNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>-->
     </tr>
 </table>
