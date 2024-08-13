@@ -14,9 +14,11 @@ Install the required dependencies using the following command:
 pip install -r requirements.txt
 ```
 
+
 ### Running the Algorithm
 
-You can run the algorithm on any supported Gymnasium environment. For example:
+You can run the algorithm on any supported Gymnasium environment with a discrete action space:  
+
 
 ```bash
 python main.py --env 'LunarLander-v2'
