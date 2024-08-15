@@ -1,5 +1,5 @@
 swig
-box3d-py
+box2d-py
 torch
 matplotlib
 numpy
