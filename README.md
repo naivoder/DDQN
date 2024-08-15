@@ -4,6 +4,8 @@
 
 🚧 🛠️👷‍♀️ 🛑 Under construction...
 
+This repository contains an implementation of Double Deep Q-Network (DDQN) learning. 
+
 ## Setup
 
 ### Required Dependencies
@@ -30,8 +32,8 @@ python main.py --env 'LunarLander-v2'
 <table>
     <tr>
         <td>
-            <p><b>MsPacman</b></p>
-            <img src="environments/MsPacmanNoFrameskip-v4.gif" width="250" height="250"/>
+            <p><b>Adventure</b></p>
+            <img src="environments/AdventureNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
         <td>
             <p><b>AirRaid</b></p>
@@ -44,7 +46,7 @@ python main.py --env 'LunarLander-v2'
     </tr>
     <tr>
         <td>
-            <img src="metrics/MsPacmanNoFrameskip-v4_running_avg.png" width="250" height="250"/>
+            <img src="metrics/AdventureNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>
         <td>
             <img src="metrics/AirRaidNoFrameskip-v4_running_avg.png" width="250" height="250"/>
@@ -573,11 +575,11 @@ python main.py --env 'LunarLander-v2'
             <p><b>YarsRevenge</b></p>
             <img src="environments/YarsRevengeNoFrameskip-v4.gif" width="250" height="250"/>
         </td>
-        <!--<td>
-            <p><b>VideoPinball</b></p>
-            <img src="environments/VideoPinballNoFrameskip-v4.gif" width="250" height="250"/>
-        </td>
         <td>
+            <p><b>Zaxxon</b></p>
+            <img src="environments/ZaxxonNoFrameskip-v4.gif" width="250" height="250"/>
+        </td>
+        <!--<td>
             <p><b>WizardOfWor</b></p>
             <img src="environments/WizardOfWorNoFrameskip-v4.gif" width="250" height="250"/>
         </td>-->
@@ -586,10 +588,10 @@ python main.py --env 'LunarLander-v2'
         <td>
             <img src="metrics/YarsRevengeNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>
-        <!--<td>
-            <img src="metrics/VideoPinballNoFrameskip-v4_metrics.png" width="250" height="250"/>
-        </td>
         <td>
+            <img src="metrics/ZaxxonNoFrameskip-v4_metrics.png" width="250" height="250"/>
+        </td>
+        <!--<td>
             <img src="metrics/WizardOfWorNoFrameskip-v4_metrics.png" width="250" height="250"/>
         </td>-->
     </tr>
